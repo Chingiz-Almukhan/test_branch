@@ -23,9 +23,8 @@ jobs:
           port: 22
           script: |
             cd projects
-            rm -r test_branch
-            git clone https://github.com/Chingiz-Almukhan/test_branch.git
             cd test_branch
+            git pull origin master --rebase
             docker-compose down --remove-orphans
             chmod +x entrypoint.sh
             sudo docker-compose -f docker-compose.yml up --build -d
