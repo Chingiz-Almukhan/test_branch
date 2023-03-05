@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'quantum.wsgi.application'
 # }
 
 if DEBUG is True:
-    db_host = 'localhost'
+    db_host = 'db'
 else:
     db_host = os.getenv('DB_HOST')
 

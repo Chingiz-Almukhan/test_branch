@@ -4,9 +4,6 @@ venv
 .idea
 .DS_Store
 media
-.env
 .vscode
 uploads
 persistentdata
-
-.pg-env
