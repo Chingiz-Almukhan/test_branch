@@ -1,45 +1,37 @@
-version: '3'
-
+version: "3.9"
 
 services:
-  db:
-    image: postgres:14.0
-    volumes:
-      - postgresql_data:/var/lib/postgresql/data/
-    environment:
-      - TZ=Asia/Almaty
-      - POSTGRES_DB=quantum
-      - POSTGRES_USER=china
-      - POSTGRES_PASSWORD=1234
-    ports:
-      - "5555:5432"
+  nginx:
     restart: always
-
-  web:
+    build:
+        context: ./nginx
+    ports:
+      - "80:80" # port exposed to outside world.
+      # - "443:443" # <--- add this line
+  #   command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    volumes:
+      # - ./persistentdata/certbot/conf:/etc/letsencrypt # <--here
+      # - ./persistentdata/certbot/www:/var/www/certbot
+      - ./persistentdata/static:/var/www/static
+      - ./persistentdata/uploads:/var/www/uploads
+  django-backend:
+    restart: always
     build:
       context: .
-      dockerfile: Dockerfile
-    command: bash -c 'python ./source/manage.py migrate --noinput && python ./source/manage.py collectstatic --noinput && ./source/python manage.py runserver 0.0.0.0:8000'
+    image: djangobackend
     volumes:
-      - web_volume:/home/app/web
-      - media:/home/app/web/media
-      - static:/home/app/web/static
-      - logs:/home/app/web/logs:rw
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-    environment:
-      - TZ=Asia/Almaty
-      - DB_HOST=db
+      - ./persistentdata/static:/var/www/static # <--here
+      - ./persistentdata/uploads:/var/www/uploads # <--here
+  postgresql-db:
     restart: always
-
-volumes:
-  postgresql_data:
-  media:
-    external: true
-  static:
-    external: true
-  logs:
-    external: true
-  web_volume:
+    image: postgres
+    volumes:
+            - ./persistentdata/db:/var/lib/postgresql/data
+    env_file:
+      - ./postgresql-db/.pg-env # why - see the next step
+  # certbot:
+    # image: certbot/certbot
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    # volumes:
+      # - ./persistentdata/certbot/conf:/etc/letsencrypt # <--here
+      # - ./persistentdata/certbot/www:/var/www/certbot
