@@ -25,7 +25,7 @@ jobs:
             cd test_branch
             git pull
             docker-compose down --remove-orphans
+            chmod +x entrypoint.sh
             sudo docker-compose -f docker-compose.yml up --build -d
             docker ps
-            systemctl restart nginx
             exit
