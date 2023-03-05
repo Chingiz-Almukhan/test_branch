@@ -12,16 +12,16 @@
    #  volumes:
       # - ./persistentdata/certbot/conf:/etc/letsencrypt # <--here
       # - ./persistentdata/certbot/www:/var/www/certbot
-      - ./persistentdata/static:/var/www/static
-      - ./persistentdata/uploads:/var/www/uploads
+      # - ./persistentdata/static:/var/www/static
+     #  - ./persistentdata/uploads:/var/www/uploads
 #   django-backend:
  #    restart: always
    #  build:
      #  context: .
     # image: djangobackend
     # volumes:
-      - ./persistentdata/static:/var/www/static # <--here
-      - ./persistentdata/uploads:/var/www/uploads # <--here
+      # - ./persistentdata/static:/var/www/static # <--here
+     #  - ./persistentdata/uploads:/var/www/uploads # <--here
   # postgresql-db:
     # restart: always
     # image: postgres
@@ -57,7 +57,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bash -c 'python manage.py migrate --noinput && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000'
+    command: bash -c 'python ./source/manage.py migrate --noinput && python ./source/manage.py collectstatic --noinput && ./source/python manage.py runserver 0.0.0.0:8000'
     volumes:
       - web_volume:/home/app/web
       - media:/home/app/web/media
