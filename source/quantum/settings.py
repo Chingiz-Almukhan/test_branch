@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'quantum.wsgi.application'
 # }
 
 if DEBUG is True:
-    db_host = 'db'
+    db_host = 'postgresql-db'
 else:
     db_host = os.getenv('DB_HOST')
 
@@ -108,7 +108,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': db_host,
-        'PORT': '5432',
+        'PORT': '',
     },
 }
 
