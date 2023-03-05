@@ -1,0 +1,48 @@
+{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Домашние задания" %} {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='homework' %}
+{% endblock %}
+
+{% block content %}
+  <p class="card-title">{% trans "Домашние задания ученика" %}:</p>
+    {% if lessons %}
+    <div class="table-responsive pt-3 pb-3">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>{% trans "Группа" %}</th>
+            <th>{% trans "Задание" %}</th>
+            <th>{% trans "Вложение" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lesson in lessons %}
+          {% if lesson.homework %}
+            <tr class='clickable-row' data-href="">
+              <td>{{ lesson.grouping }}</td>
+              <td>{{ lesson.homework.task }}</td>
+              <td>{% if lesson.homework.attachment %} <a href="{{lesson.homework.attachment.url}}">{% trans "Просмотр" %}</a>{% endif %}</td>
+            </tr>
+          {% endif %}
+            
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+        <p>{% trans "У ученика нет домашних заданий" %}</p>
+    {% endif %}
+
+  {% endblock %}
+
+
+
+
+
+
+
+

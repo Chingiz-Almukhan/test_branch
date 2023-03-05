@@ -1,0 +1,147 @@
+{% extends 'crm.html' %}
+
+{% load static %}
+{% block title %}Event Calendar{% endblock title %}
+
+{% block extracss %}
+    {#    <link href="{% static 'css/lessons/main_base.css' %}" rel="stylesheet"/>#}
+    <link href="{% static 'css/lessons/main.css' %}" rel="stylesheet"/>
+{% endblock extracss %}
+
+{% block content %}
+
+    {% comment %} {% block breadcrumb %} {% endcomment %}
+    {#  <div>#}
+    {#      <h1><i class="fa fa-calendar"></i> Calendar</h1>#}
+    {#      <p>Event Calendar</p>#}
+    {#  </div>#}
+    {#  <ul class="app-breadcrumb breadcrumb">#}
+    {#      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>#}
+    {#      <li class="breadcrumb-item"><a href="#">Calendar</a></li>#}
+    {#  </ul>#}
+    {% comment %} {% endblock breadcrumb %} {% endcomment %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile row">
+            <div class="col-md-12">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'js/lessons/main.js' %}"></script>
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.1/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateContainer()
+            $(window).resize(function () {
+                updateContainer()
+            });
+        });
+
+        function updateContainer() {
+            var DAY_NAMES = ['Жексенбі', 'Дүйсенбі', 'Сейсенбі', 'Сәрсенбі', 'Бейсенбі', 'Жұма', 'Сенбі',]
+            let MONTH_NAMES = ['Қаңтар', 'Ақпан', 'Наурыз', 'Сәуір', 'Мамыр', 'Маусым', 'Шілде', 'Тамыз', 'Қыркүйек', 'Қазан', 'Қараша', 'Желтоқсан']
+            let calendarEl = document.getElementById('calendar');
+            let today = new Date();
+            let calendar_format = {
+                today: 'Бүгін',
+                month: 'Ай',
+                week: 'Апта',
+                day: 'Күн',
+                list: 'Күн тәртібі',
+            };
+            var page_locale = 'kk'
+            let google_calendar_api = 'AIzaSyCKZ-qUjbX2276cwabHXsbiB04dtLpx1P8'
+            let event_source = [{
+                googleCalendarId: 'kk.kz#holiday@group.v.calendar.google.com',
+            }]
+
+            if ($(document).width() > 500
+            ) {
+                let calendar = new FullCalendar.Calendar(calendarEl, {
+                            headerToolbar: {
+                                left: 'prev,next,today',
+                                center: 'title',
+                                right: 'dayGridMonth,timeGridWeek,timeGridDay,list'
+                            },
+                            buttonText: calendar_format,
+                            dayHeaderContent: function (arg) {
+                                return DAY_NAMES[arg.date.getDay()]
+
+                            },
+                            weekText: 'Не',
+                            showNonCurrentDates: false,
+                            allDayText: 'Күні бойы',
+                            moreLinkText: function (n) {
+                                return '+ тағы ' + n
+                            },
+                            noEventsText: 'Көрсету үшін оқиғалар жоқ',
+                            initialDate: today,
+                            locale: page_locale,
+                            events: {{ events|safe }},
+                            eventDisplay: 'block',
+                            firstDay: 1,
+                            navLinks: true, // can click day/week names to navigate views
+                            selectable: true,
+                            selectMirror: true,
+                            defaultAllDay: false,
+                            googleCalendarApiKey: google_calendar_api,
+                            eventSources: event_source,
+                            editable: false,
+                            dayMaxEvents: true,
+                            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                            eventTimeFormat: {
+                                hour: 'numeric',
+                                minute: '2-digit',
+                                meridiem: false
+                            }
+
+                        }
+                    )
+                ;
+                calendar.render();
+            } else {
+                let calendar_week = new FullCalendar.Calendar(calendarEl, {
+                    headerToolbar: {
+                        left: 'title',
+                        center: 'listWeek,timeGridDay',
+                        right: 'prev,next',
+                    },
+                    dayHeaderContent: function (arg) {
+                                return DAY_NAMES[arg.date.getDay()] + " " + arg.date.getDate()+ " " + MONTH_NAMES[arg.date.getMonth()] + " " + arg.date.getFullYear() + ' ' + 'ж.'
+
+                            },
+                    initialView: 'listWeek',
+                    color: 'yellow',   // an option!
+                    textColor: 'black',
+                    defaultAllDay: false,
+                    events: {{ events|safe }},
+                    buttonText: calendar_format,
+                    locale: page_locale,
+                    noEventsText: 'Көрсету үшін оқиғалар жоқ',
+                    googleCalendarApiKey: google_calendar_api,
+                    eventSources: event_source,
+                })
+                calendar_week.render()
+            }
+            if ($(document).width() < 500) {
+                $('.fc-header-toolbar').addClass('row')
+                $('.fc-toolbar-title').css('font-size', '20px');
+                $('.fc-toolbar-chunk').addClass('col-auto mx-auto mb-2')
+            } else {
+                $('.fc-header-toolbar').removeClass('row')
+                $('.fc-toolbar-title').css('font-size', '');
+                $('.fc-toolbar-chunk').removeClass('col-auto mx-auto mb-2')
+            }
+        }
+    </script>
+{% endblock js %}

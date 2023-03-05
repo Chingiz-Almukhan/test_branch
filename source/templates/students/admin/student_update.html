@@ -1,0 +1,81 @@
+﻿{% extends 'crm.html' %}
+{% load static %}
+{% block title %} Изменение информации о студенте {% endblock %}
+
+{% block nav %}
+{% include 'partial/left_nav.html' with page='students' %}
+{% endblock %}
+
+{% block content %}
+<p class="card-title">Редактирование информации студента "{{ student.get_full_name }}"</p>
+<form class="forms-sample" action="{% url 'student_update' student.pk %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Имя ученика: *</label>
+      {{ form.first_name }}
+    </div>
+    {% for error in form.first_name.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Фамилия ученика: *</label>
+        {{ form.last_name }}
+    </div>
+    {% for error in form.last_name.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Пол: *</label>
+        {{ form.sex }}
+    </div>
+    {% for error in form.sex.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Электронная почта: *</label>
+        {{ form.email }}
+    </div>
+    {% for error in form.email.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Номер телефона: *</label>
+        {{ form.phone_number }}
+    </div>
+    {% for error in form.phone_number.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Дата рождения: *</label>
+        {{ form.birth_date }}
+    </div>
+    {% for error in form.birth_date.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>ИИН: *</label>
+        {{ form.iin }}
+    </div>
+    {% for error in form.iin.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Адрес проживания: *</label>
+        {{ form.address }}
+    </div>
+    {% for error in form.address.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <div class="form-check">
+        <label class="form-check-label">
+            {{ form.is_active }}
+            Активный
+        </label>  
+    </div>
+    {% for error in form.is_active.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <button type="submit" class="btn btn-inverse-primary mr-2 mt-3">Сохранить</button>
+    <a href="{% url 'students' %}" class="btn btn-inverse-dark mt-3">Отмена</a>
+</form>
+{% endblock %}

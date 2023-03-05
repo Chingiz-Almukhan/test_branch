@@ -1,0 +1,29 @@
+<!-- модальное окно удаление ученика из группы -->
+<div class="modal fade" id="del_student_from_grouping_modal{{ forloop.counter }}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="display-4">Подтверждение удаления ученика из группы</p>
+            </div>
+            <form action="{% url 'del_student_from_grouping' %}" method="POST">
+                {% csrf_token %}
+            
+                <div class="modal-body text-center">
+                    <h5>Для отчисления ученика {{ student_grouping.student }} из группы {{ student_grouping.grouping }}</h5>
+                    <p>Укажите дату отчисления</p> 
+                    <input type="date" name="expelled_at"  value="{{ current_date|date:'Y-m-d' }}" required><br>
+                    <input type="hidden" name="grouping_pk", value="{{ student_grouping.grouping.pk }}">
+                    <input type="hidden" name="student_pk", value="{{ student_grouping.student.pk }}">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-inverse-danger"
+                            data-bs-dismiss="modal">Да, хочу
+                    </button>
+                    <a href="" type="button" class="btn btn-inverse-dark">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

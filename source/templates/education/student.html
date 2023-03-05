@@ -1,0 +1,118 @@
+﻿{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Детальный просмотр страницы студента" %} {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='students' %}
+{% endblock %}
+
+{% block content %}
+<p class="card-title">{% trans "Студент" %} "{{ object.get_full_name }}"</p>
+<p class="card-description">
+    {% trans "Персональная информация" %}
+  </p>
+<blockquote class="blockquote">
+<div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>{% trans "Имя" %}:</strong></label>
+        <div class="col-sm-8 mt-3">
+            <p>{{ object.first_name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>{% trans "Фамилия" %}:</strong></label>
+        <div class="col-sm-8 mt-3">
+            <p>{{ object.last_name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>{% trans "Пол" %}:</strong></label>
+          <div class="col-sm-8 mt-3">
+            {% if object.sex == 'MALE'%}
+                <p>{% trans "Мужской" %}</p>
+            {% else %}
+                <p>{% trans "Женский" %}</p>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>{% trans "Почта" %}:</strong></label>
+          <div class="col-sm-8 mt-3">
+              <p>{{ object.email }}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>{% trans "Номер телефона" %}:</strong></label>
+          <div class="col-sm-8 mt-3">
+              <p>{{ object.phone_number }}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>{% trans "Дата рождения" %}:</strong></label>
+          <div class="col-sm-8 mt-3">
+              <p>{{ object.birth_date }}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>ИИН:</strong></label>
+          <div class="col-sm-8 mt-3">
+              <p>{{ object.iin }}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><strong>{% trans "Адрес" %}:</strong></label>
+          <div class="col-sm-8 mt-3">
+              <p>{{ object.address }}</p>
+          </div>
+        </div>
+    </div>
+</div>
+</blockquote>
+<p class="card-description">
+  {% trans "Группы" %}
+</p>
+<blockquote class="blockquote">
+    {% if object.study_groupings.all %}
+      {% for grouping in object.study_groupings.all %}
+      <div class="row">  
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label"><strong>{% trans "Название" %}:</strong></label>
+            <div class="col-sm-8 mt-3">
+                <p>{{ grouping.name }}</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label"><strong>{% trans "Предмет" %}:</strong></label>
+            <div class="col-sm-8 mt-3">
+                <p>{{ grouping.subject }}</p>
+            </div>
+          </div>
+      </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <p>{% trans "Студент еще не прикреплен ни к одной группе" %}!</p>
+    {% endif %}
+</blockquote>
+<a href="{% url 'student_update' object.pk %}" class="btn btn-inverse-primary mt-3">{% trans "Редактировать" %}</a>
+<a href="{% url 'students' %}" class="btn btn-inverse-dark mt-3">{% trans "Вернуться к списку студентов" %}</a>
+{% endblock %}

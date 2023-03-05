@@ -1,0 +1,1221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-23 21:47+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: api/views/application_first_form.py:26
+#: api/views/application_first_form.py:60
+#: api/views/application_first_form.py:82
+msgid "Сохранено"
+msgstr "Сақталды"
+
+#: api/views/application_first_form.py:32
+#: api/views/application_first_form.py:53
+msgid "Подписание договора"
+msgstr "Келісімге қол қою"
+
+#: api/views/application_first_form.py:35
+msgid "В работе"
+msgstr "Айналысуда"
+
+#: api/views/application_first_form.py:56
+#: api/views/application_first_form.py:79
+msgid "Ожидание оплаты"
+msgstr "Төлем күтілуде"
+
+#: api/views/application_first_form.py:76
+msgid "Оплачена"
+msgstr "Төленді"
+
+#: api/views/check_user.py:16 api/views/check_user.py:20
+#: api/views/create_student_by_application_view.py:24
+#: students/forms/student_form.py:52
+msgid "Пользователь с такой почтой уже существует"
+msgstr ""
+
+#: api/views/check_user.py:17 api/views/check_user.py:23
+#: api/views/create_student_by_application_view.py:27
+msgid "Пользователь с таким номером телефона уже существует"
+msgstr ""
+
+#: api/views/create_application_view.py:29
+msgid "Вы уже оставили заявку"
+msgstr ""
+
+#: api/views/create_application_view.py:32
+msgid "Создана"
+msgstr "Құрылды"
+
+#: api/views/create_application_view.py:35
+msgid "Заявка создана"
+msgstr ""
+
+#: api/views/create_application_view.py:40
+msgid "Укажите имя"
+msgstr ""
+
+#: api/views/create_application_view.py:42
+msgid "Укажите фамилию"
+msgstr ""
+
+#: api/views/create_application_view.py:44
+msgid "Укажите почту"
+msgstr ""
+
+#: api/views/create_application_view.py:46
+msgid "Выберете предмет"
+msgstr ""
+
+#: api/views/create_student_by_application_view.py:43
+msgid "Завершена"
+msgstr ""
+
+#: api/views/create_student_by_application_view.py:56
+msgid "Студент создан"
+msgstr ""
+
+#: applications/forms/application_form.py:12
+msgid "Желаемые предметы"
+msgstr "Қалаған пәндер"
+
+#: applications/forms/application_form.py:23
+#: applications/forms/application_form.py:26
+#: education/forms/teacher_edit_form.py:33
+#: students/forms/student_edit_form.py:33 students/forms/student_form.py:42
+#: templates/applications/application_detail.html:12
+#: templates/applications/applications_list.html:25
+#: templates/education/grouping_update.html:85
+#: templates/education/student.html:19 templates/education/teacher.html:112
+#: templates/education/teachers.html:25
+#: templates/students/admin/students.html:20
+msgid "Имя"
+msgstr "Есімі"
+
+#: applications/forms/application_form.py:28
+#: applications/forms/application_form.py:31
+#: education/forms/teacher_edit_form.py:34
+#: students/forms/student_edit_form.py:34 students/forms/student_form.py:43
+#: templates/applications/application_detail.html:13
+#: templates/applications/applications_list.html:24
+#: templates/education/grouping_update.html:84
+#: templates/education/student.html:27 templates/education/teacher.html:111
+#: templates/education/teachers.html:24
+#: templates/students/admin/students.html:19
+msgid "Фамилия"
+msgstr "Тегі"
+
+#: applications/models.py:32
+msgid "инн более 12 символов"
+msgstr ""
+
+#: applications/models.py:34
+msgid "инн менее 12 символов"
+msgstr ""
+
+#: applications/models.py:62
+msgid ""
+"Вводить через запятую: населенный пункт, улица, номер дома, номер квартиры"
+msgstr ""
+
+#: applications/models.py:67
+msgid "Загружать pdf подписанного договора"
+msgstr ""
+
+#: education/forms/discount_form.py:13 templates/education/discounts.html:25
+msgid "Название льготы"
+msgstr "Жеңілдіктің атауы"
+
+#: education/forms/discount_form.py:15
+msgid "Размер в %"
+msgstr "Көлемі %"
+
+#: education/forms/grouping_form.py:18
+msgid "Название группы"
+msgstr "Топтың атауы"
+
+#: education/forms/package_form.py:13 templates/education/packages.html:24
+msgid "Название пакета"
+msgstr ""
+
+#: education/forms/package_form.py:14
+msgid "Количество предметов"
+msgstr "Пәндер саны"
+
+#: education/forms/subject_form.py:14 templates/education/subjects.html:24
+msgid "Название предмета"
+msgstr "Пән атауы"
+
+#: education/forms/teacher_edit_form.py:13
+#: students/forms/student_edit_form.py:13 students/forms/student_form.py:20
+#: templates/applications/application_update.html:56
+#: templates/education/student.html:35 templates/education/teacher.html:58
+#: templates/students/student_detail.html:56
+msgid "Пол"
+msgstr "Жынысы"
+
+#: education/forms/teacher_edit_form.py:17
+#: students/forms/student_edit_form.py:17 students/forms/student_form.py:24
+#: templates/applications/application_detail.html:24
+#: templates/applications/application_update.html:50
+#: templates/education/student.html:63 templates/education/teacher.html:33
+#: templates/education/teacher_update.html:50
+#: templates/students/admin/students.html:21
+#: templates/students/student_detail.html:31
+msgid "Дата рождения"
+msgstr "Туылган күні"
+
+#: education/forms/teacher_edit_form.py:35
+#: students/forms/student_edit_form.py:35 students/forms/student_form.py:44
+#: templates/applications/application_detail.html:14
+#: templates/education/student.html:47 templates/education/teacher.html:25
+#: templates/students/student_detail.html:23
+#: templates/students/student_groupings.html:28
+msgid "Почта"
+msgstr "Электрондық пошта"
+
+#: education/forms/teacher_edit_form.py:37
+#: students/forms/student_edit_form.py:37 students/forms/student_form.py:46
+#: templates/applications/application_update.html:128
+#: templates/education/student.html:79 templates/education/teacher.html:50
+#: templates/students/student_detail.html:48
+msgid "Адрес"
+msgstr "Мекенжайі"
+
+#: education/views/contracts.py:74
+msgid "Договор отправлен"
+msgstr "Келісім-шарт поштага жіберілді"
+
+#: quantum/settings.py:140
+msgid "Kazakh"
+msgstr ""
+
+#: quantum/settings.py:141
+msgid "Russian"
+msgstr ""
+
+#: students/forms/student_form.py:17
+msgid "Подтвердите пароль"
+msgstr "Құпия сөзді растау"
+
+#: students/forms/student_form.py:21
+#: templates/applications/application_update.html:70
+#: templates/applications/applications_list.html:26
+#: templates/education/teacher.html:42
+#: templates/students/student_detail.html:40
+#: templates/students/student_groupings.html:29
+msgid "Телефон"
+msgstr "Телефон нөмірі"
+
+#: students/forms/student_form.py:54
+msgid "Пользователь с таким телефоном уже существует"
+msgstr ""
+
+#: students/forms/student_form.py:58
+msgid "Пароли не совпадают"
+msgstr ""
+
+#: templates/applications/application_add.html:5
+msgid "Добавление новой заявки"
+msgstr "Жаңа өтініш қосу"
+
+#: templates/applications/application_add.html:12
+msgid "Создание новой заявки"
+msgstr "Жаңа өтініш қосу"
+
+#: templates/applications/application_add.html:17
+#: templates/applications/application_update.html:176
+#: templates/applications/application_update.html:225
+#: templates/applications/application_update.html:246
+#: templates/applications/application_update.html:297
+#: templates/education/class_time_add.html:28
+#: templates/education/discount_add.html:27
+#: templates/education/discount_update.html:27
+#: templates/education/grouping_add.html:16
+#: templates/education/grouping_update.html:35
+#: templates/education/grouping_update.html:66
+#: templates/education/package_add.html:32
+#: templates/education/package_update.html:33
+#: templates/education/schedule_create.html:194
+#: templates/education/subject_add.html:20
+#: templates/education/subject_update.html:20
+#: templates/education/teacher_update.html:87
+#: templates/lessons/lesson-detail.html:176
+msgid "Сохранить"
+msgstr "Сақтау"
+
+#: templates/applications/application_add.html:18
+msgid "Вернуться к списку заявок"
+msgstr "Өтінімдер тізіміне оралу"
+
+#: templates/applications/application_detail.html:4
+#: templates/applications/application_detail.html:11
+msgid "Просмотр заявки"
+msgstr "Өтініш"
+
+#: templates/applications/application_detail.html:15
+msgid "Номер"
+msgstr "Нөмірі"
+
+#: templates/applications/application_detail.html:16
+#: templates/education/subjects.html:4 templates/education/teacher.html:86
+#: templates/education/teacher_update.html:81
+#: templates/education/teachers.html:28 templates/partial/left_nav.html:16
+msgid "Предметы"
+msgstr "Пәндер"
+
+#: templates/applications/application_detail.html:22
+msgid "Школа"
+msgstr "Мектеп"
+
+#: templates/applications/application_detail.html:23
+msgid "Смена"
+msgstr "Ауысым"
+
+#: templates/applications/application_detail.html:25
+msgid "Родитель"
+msgstr "Ата-анасы"
+
+#: templates/applications/application_detail.html:26
+msgid "Контакты родителя"
+msgstr "Ата-анасының нөмірі"
+
+#: templates/applications/application_detail.html:27
+msgid "Адресс"
+msgstr "Мекенжайі"
+
+#: templates/applications/application_detail.html:28
+msgid "Желаемое время"
+msgstr "Қалаған уақыты"
+
+#: templates/applications/application_detail.html:33
+msgid "Статус заявки"
+msgstr "Өтініштің күйі"
+
+#: templates/applications/application_detail.html:34
+msgid "Дата изменения"
+msgstr "Өзгерген күні"
+
+#: templates/applications/application_detail.html:35
+msgid "Автор изменения"
+msgstr "Өзгерістің авторы"
+
+#: templates/applications/application_detail.html:50
+#: templates/education/student.html:116 templates/education/teachers.html:49
+#: templates/students/admin/students.html:48
+msgid "Редактировать"
+msgstr "Өзгерту"
+
+#: templates/applications/application_update.html:6
+#: templates/applications/application_update.html:15
+#: templates/applications/applications_list.html:49
+msgid "Редактирование заявки"
+msgstr "Өтінішті өзгерту"
+
+#: templates/applications/application_update.html:19
+msgid "Текущий статус заявки"
+msgstr "Өтініштің ағымдағы күйі"
+
+#: templates/applications/application_update.html:27
+msgid "email существует в базе, смените его"
+msgstr "электрондық пошта дерекқорда бар, поштаны өзгертіңіз"
+
+#: templates/applications/application_update.html:36
+msgid "Имя ученика"
+msgstr "Оқушының есімі"
+
+#: templates/applications/application_update.html:42
+msgid "Фамилия ученика"
+msgstr "Оқушының тегі"
+
+#: templates/applications/application_update.html:64
+msgid "Email"
+msgstr "Электрондық пошта"
+
+#: templates/applications/application_update.html:78
+msgid "Номер школы"
+msgstr "Мектеп нөмірі"
+
+#: templates/applications/application_update.html:84
+msgid "Номер класса"
+msgstr "Сынып нөмірі"
+
+#: templates/applications/application_update.html:92
+msgid "Номер смены"
+msgstr "Ауысым нөмірі"
+
+#: templates/applications/application_update.html:100
+msgid "Фамилия родителя"
+msgstr "Ата-анасының тегі"
+
+#: templates/applications/application_update.html:106
+msgid "Имя родителя"
+msgstr "Ата-анасының есімі"
+
+#: templates/applications/application_update.html:114
+msgid "ИИН родителя"
+msgstr "Ата-анасының ИИН-і"
+
+#: templates/applications/application_update.html:120
+msgid "Email родителя"
+msgstr "Ата-анасының электрондық поштасы"
+
+#: templates/applications/application_update.html:137
+msgid "Желаемое время обучения"
+msgstr "Қалаған оқу уақыты"
+
+#: templates/applications/application_update.html:145
+msgid "Льгота"
+msgstr "Жеңілдіктер"
+
+#: templates/applications/application_update.html:151
+#: templates/education/packages.html:26
+msgid "Сумма"
+msgstr ""
+
+#: templates/applications/application_update.html:156
+msgid "Предметы к обучению"
+msgstr "Пәндер"
+
+#: templates/applications/application_update.html:198
+msgid "Открыть договор"
+msgstr "Келісімшарты ашу"
+
+#: templates/applications/application_update.html:207
+msgid "Отправить договор на email"
+msgstr "Келісімшартты поштаға жіберу"
+
+#: templates/applications/application_update.html:258
+msgid "Создать ученика"
+msgstr "Оқушыны қосу"
+
+#: templates/applications/application_update.html:262
+msgid "Создать родителя"
+msgstr "Ата-анасыны қосу"
+
+#: templates/applications/application_update.html:268
+#: templates/applications/application_update.html:279
+msgid "Отклонить заявку"
+msgstr "Өтінішіті қабылдамау"
+
+#: templates/applications/application_update.html:294
+#: templates/lessons/lesson-detail.html:173
+msgid "Закрыть"
+msgstr "Жабу"
+
+#: templates/applications/applications_list.html:4
+#: templates/partial/left_nav.html:40
+msgid "Заявки"
+msgstr "Өтінімдер"
+
+#: templates/applications/applications_list.html:11
+msgid "Список заявок"
+msgstr "Отініштер тізімі"
+
+#: templates/applications/applications_list.html:15
+msgid "Создать заявку"
+msgstr "Өтініш жасау"
+
+#: templates/applications/applications_list.html:28
+msgid "Дата"
+msgstr ""
+
+#: templates/applications/applications_list.html:29
+msgid "Статус"
+msgstr "Күйі"
+
+#: templates/applications/applications_list.html:44
+#: templates/education/teachers.html:44
+#: templates/students/admin/students.html:43
+msgid "Подробная информация"
+msgstr "Толык ақпарат"
+
+#: templates/applications/applications_list.html:54
+msgid "Удалить заявку"
+msgstr "Өтінішті жасау"
+
+#: templates/applications/applications_list.html:64
+msgid "Подтверждение удаления заявки"
+msgstr "Өтінішті жоюды растау"
+
+#: templates/applications/applications_list.html:68
+#, python-format
+msgid " Вы точно хотите удалить заявку %(app_name)s %(app_surname)s? "
+msgstr "Вы точно хотите удалить заявку %(app_name)s %(app_surname)s? (kz)"
+
+#: templates/applications/applications_list.html:75
+#: templates/education/class_times.html:63
+#: templates/education/discounts.html:73 templates/education/groupings.html:79
+#: templates/education/packages.html:76 templates/education/subjects.html:70
+msgid "Да, хочу"
+msgstr "Ия, жою"
+
+#: templates/applications/applications_list.html:77
+#: templates/education/class_time_add.html:29
+#: templates/education/class_times.html:65
+#: templates/education/discount_add.html:28
+#: templates/education/discount_update.html:28
+#: templates/education/discounts.html:75
+#: templates/education/grouping_add.html:17
+#: templates/education/grouping_update.html:36
+#: templates/education/groupings.html:81
+#: templates/education/package_add.html:33
+#: templates/education/package_update.html:34
+#: templates/education/packages.html:78 templates/education/subject_add.html:21
+#: templates/education/subject_update.html:21
+#: templates/education/subjects.html:72
+#: templates/education/teacher_update.html:88
+msgid "Отмена"
+msgstr "Тоқтату"
+
+#: templates/base.html:63
+msgid "Перейти в CRM"
+msgstr "CRM-ге өту"
+
+#: templates/base.html:67
+msgid "Настройки"
+msgstr "Настройки (кз)"
+
+#: templates/base.html:71
+msgid "Сменить пароль"
+msgstr "Құпия сөзді өзгерту"
+
+#: templates/base.html:75
+msgid "Выйти"
+msgstr "Шығу"
+
+#: templates/base.html:82
+msgid "Войти"
+msgstr "Кіру"
+
+#: templates/crm.html:5 templates/index.html:5
+msgid "Главная страница"
+msgstr "Басты бет"
+
+#: templates/education/class_time_add.html:11
+msgid "Добавление нового времени предмета"
+msgstr "Пәннің жаңа уакытын тіркеу"
+
+#: templates/education/class_times.html:11
+msgid "Время занятий"
+msgstr "Сабақ уақыты"
+
+#: templates/education/class_times.html:15
+msgid "Добавить новое время"
+msgstr "Жаңа уақыт қосу"
+
+#: templates/education/class_times.html:23
+msgid "№ занятия"
+msgstr "Сабақтың №"
+
+#: templates/education/class_times.html:24
+msgid "Начало занятия"
+msgstr "Басталу уақыты"
+
+#: templates/education/class_times.html:25
+msgid "Конец занятия"
+msgstr "Аяқталу уақыты"
+
+#: templates/education/class_times.html:26
+msgid "Активное"
+msgstr "Белсенді"
+
+#: templates/education/class_times.html:54
+msgid "Подтверждение удаления времени"
+msgstr "Уақыт жоюды растау"
+
+#: templates/education/discount_add.html:4
+#: templates/education/discount_add.html:12
+msgid "Добавление новой льготы"
+msgstr "Жаңа жеңілдік қосу"
+
+#: templates/education/discount_update.html:4
+msgid "Редактирование льготы"
+msgstr "Жеңілдікті өзгерту"
+
+#: templates/education/discount_update.html:12
+#, python-format
+msgid " Редактирование льготы \"%(discount)s\" "
+msgstr "\"%(discount)s\" жеңілділдін өзгерту"
+
+#: templates/education/discounts.html:4 templates/partial/left_nav.html:28
+msgid "Льготы"
+msgstr "Жеңілдіктер"
+
+#: templates/education/discounts.html:12
+msgid "Список льгот"
+msgstr "Жеңілдіктер тізімі"
+
+#: templates/education/discounts.html:16
+msgid "Добавить новую льготу"
+msgstr "Жаңа жеңілдік қосу"
+
+#: templates/education/discounts.html:26
+#, python-format
+msgid "Размер %%"
+msgstr "Көлемі"
+
+#: templates/education/discounts.html:27 templates/education/packages.html:27
+#: templates/education/teacher_update.html:73
+#: templates/students/admin/students.html:23
+msgid "Активный"
+msgstr "Белсенді"
+
+#: templates/education/discounts.html:64
+msgid "Подтверждение удаления льготы"
+msgstr "Жеңілдік жоюды растау"
+
+#: templates/education/discounts.html:67
+#, python-format
+msgid " Вы точно хотите удалить льготу %(disc)s "
+msgstr "Вы точно хотите удалить льготу %(disc)s  (kz)"
+
+#: templates/education/grouping_add.html:5
+#: templates/education/grouping_add.html:12
+msgid "Добавление новой группы"
+msgstr "Жаңа топ қосу"
+
+#: templates/education/grouping_update.html:5
+msgid "Работа с группами"
+msgstr ""
+
+#: templates/education/grouping_update.html:15
+msgid "Редактирование группы"
+msgstr "Топты өзгерту"
+
+#: templates/education/grouping_update.html:19
+msgid "Текущий преподаватель группы"
+msgstr "Қазіргі топтың мұғалімі "
+
+#: templates/education/grouping_update.html:20
+msgid "Начал преподавать"
+msgstr "Начало преподавания (kz)"
+
+#: templates/education/grouping_update.html:25
+#: templates/partial/left_nav.html:83
+msgid "Основная информация"
+msgstr "Басты мәлімет"
+
+#: templates/education/grouping_update.html:26
+#: templates/education/teachers.html:4 templates/partial/left_nav.html:61
+msgid "Преподаватели"
+msgstr "Мұғалімдер"
+
+#: templates/education/grouping_update.html:27
+msgid "Ученики"
+msgstr "Оқушылар"
+
+#: templates/education/grouping_update.html:30
+msgid "Редактирование названия и предмента группы"
+msgstr "Топтын атауын және пәнін өзгерту"
+
+#: templates/education/grouping_update.html:41
+msgid "Открепить преподавателя"
+msgstr "Мұғалімді босату"
+
+#: templates/education/grouping_update.html:46
+msgid "Выберите дату окончания преподавания"
+msgstr "Выберите дату окончания преподавания (кз)"
+
+#: templates/education/grouping_update.html:48
+msgid "Открепить"
+msgstr "Босату"
+
+#: templates/education/grouping_update.html:52
+msgid "Прикрепить преподавателя"
+msgstr "Мұғалімді тіркеу"
+
+#: templates/education/grouping_update.html:56
+msgid "Выберите преподавателя"
+msgstr "Мұғалімді тандау"
+
+#: templates/education/grouping_update.html:64
+msgid "Выберите дату начала преподавания"
+msgstr "Выберите дату начала преподавания(kz)"
+
+#: templates/education/grouping_update.html:79
+msgid "Список учеников в группе"
+msgstr "Топ оқушыларының тізімі"
+
+#: templates/education/grouping_update.html:86
+msgid "Дата зачисления"
+msgstr "Тіркеу күні"
+
+#: templates/education/grouping_update.html:117
+msgid "Добавить ученика в группу"
+msgstr "Жаңа окушыны қосу"
+
+#: templates/education/grouping_update.html:122
+msgid "Выберите ученика"
+msgstr "Оқушыны тандау"
+
+#: templates/education/grouping_update.html:128
+msgid "Дата зачисления в группу"
+msgstr "Топқа тіркелген куні"
+
+#: templates/education/grouping_update.html:133
+msgid "Добавить"
+msgstr "Қосу"
+
+#: templates/education/grouping_update.html:144
+msgid "Вернуться к списку групп"
+msgstr "Топтар тізіміне оралу"
+
+#: templates/education/groupings.html:4 templates/education/student.html:88
+#: templates/education/teacher.html:17 templates/partial/left_nav.html:34
+#: templates/partial/left_nav.html:89
+#: templates/students/student_groupings.html:4
+msgid "Группы"
+msgstr "Топтар"
+
+#: templates/education/groupings.html:12
+msgid "Список групп"
+msgstr "Топтар тізімі"
+
+#: templates/education/groupings.html:16
+msgid "Добавить новую группу"
+msgstr "Жаңа топ қосу"
+
+#: templates/education/groupings.html:25 templates/education/student.html:96
+msgid "Название"
+msgstr "Атауы"
+
+#: templates/education/groupings.html:26 templates/education/student.html:104
+msgid "Предмет"
+msgstr "Пән"
+
+#: templates/education/groupings.html:27 templates/education/teacher.html:11
+#: templates/lessons/lesson-detail.html:37
+#: templates/lessons/lesson-detail.html:85
+msgid "Преподаватель"
+msgstr "Мұғалім"
+
+#: templates/education/groupings.html:28
+msgid "Активная"
+msgstr "Белсенді"
+
+#: templates/education/groupings.html:55
+msgid "Изменить"
+msgstr "Өзгерту"
+
+#: templates/education/groupings.html:59
+msgid "Удалить"
+msgstr "Жою"
+
+#: templates/education/groupings.html:70
+msgid "Подтверждение удаления группы"
+msgstr "Топты жоюды растау"
+
+#: templates/education/groupings.html:73
+#, python-format
+msgid "Вы точно хотите удалить группу %(group)s "
+msgstr "Вы точно хотите удалить группу %(group)s  (kz)"
+
+#: templates/education/package_add.html:4
+#: templates/education/package_add.html:11
+#, fuzzy
+#| msgid "Добавление новой заявки"
+msgid "Добавление нового пакета"
+msgstr "Жаңа өтініш қосу"
+
+#: templates/education/package_update.html:4
+#: templates/education/package_update.html:12
+#, fuzzy
+#| msgid "Редактирование заявки"
+msgid "Редактирование пакета"
+msgstr "Өтінішті өзгерту"
+
+#: templates/education/packages.html:4 templates/partial/left_nav.html:22
+msgid "Пакеты"
+msgstr "Пакеттер"
+
+#: templates/education/packages.html:11
+#, fuzzy
+#| msgid "Список предметов"
+msgid "Список пакетов"
+msgstr "Пәндер тізімі"
+
+#: templates/education/packages.html:15
+#, fuzzy
+#| msgid "Добавить новый предмет"
+msgid "Добавить новый пакет"
+msgstr "Жаңа пән қосу"
+
+#: templates/education/packages.html:25
+msgid "Количество"
+msgstr ""
+
+#: templates/education/packages.html:70
+#, fuzzy, python-format
+#| msgid " Вы точно хотите удалить предмет %(sub_name)s? "
+msgid " Вы точно хотите удалить предмет %(pack)s "
+msgstr "Вы точно хотите удалить предмет %(sub_name)s? (kz)"
+
+#: templates/education/schedule_create.html:4
+#: templates/education/schedule_create.html:180
+msgid "Добавление расписания"
+msgstr ""
+
+#: templates/education/schedule_create.html:12
+msgid "Составление расписания"
+msgstr ""
+
+#: templates/education/schedule_create.html:14
+msgid "Сгенерировать расписание"
+msgstr ""
+
+#: templates/education/schedule_create.html:15
+msgid "Скачать расписание"
+msgstr ""
+
+#: templates/education/schedule_create.html:17
+msgid "Выберите ученика для просмотра расписания"
+msgstr ""
+
+#: templates/education/schedule_create.html:27
+msgid "Выберите группу для просмотра расписания"
+msgstr ""
+
+#: templates/education/schedule_create.html:37
+msgid "Выберите преподавателя для просмотра расписания"
+msgstr ""
+
+#: templates/education/schedule_create.html:60
+msgid "Очистить расписание"
+msgstr ""
+
+#: templates/education/schedule_create.html:74
+#: templates/education/teacher.html:149 templates/lessons/lesson-detail.html:83
+msgid "Аудитория"
+msgstr "Аудитория"
+
+#: templates/education/schedule_create.html:75
+msgid "Время"
+msgstr ""
+
+#: templates/education/schedule_create.html:76
+msgid "Понедельник"
+msgstr ""
+
+#: templates/education/schedule_create.html:77
+msgid "Вторник"
+msgstr ""
+
+#: templates/education/schedule_create.html:78
+msgid "Среда"
+msgstr ""
+
+#: templates/education/schedule_create.html:79
+msgid "Четверг"
+msgstr ""
+
+#: templates/education/schedule_create.html:80
+msgid "Пятница"
+msgstr ""
+
+#: templates/education/schedule_create.html:81
+msgid "Суббота"
+msgstr ""
+
+#: templates/education/student.html:4
+msgid "Детальный просмотр страницы студента"
+msgstr ""
+
+#: templates/education/student.html:11
+msgid "Студент"
+msgstr "Оқушы"
+
+#: templates/education/student.html:13
+msgid "Персональная информация"
+msgstr ""
+
+#: templates/education/student.html:38 templates/education/teacher.html:62
+#: templates/students/student_detail.html:60
+msgid "Мужской"
+msgstr "Ер"
+
+#: templates/education/student.html:40 templates/education/teacher.html:64
+#: templates/students/student_detail.html:62
+msgid "Женский"
+msgstr "Әйел"
+
+#: templates/education/student.html:55
+#: templates/education/teacher_update.html:43
+#: templates/education/teachers.html:26
+msgid "Номер телефона"
+msgstr "Телефон нөмірі"
+
+#: templates/education/student.html:113
+msgid "Студент еще не прикреплен ни к одной группе"
+msgstr ""
+
+#: templates/education/student.html:117
+msgid "Вернуться к списку студентов"
+msgstr ""
+
+#: templates/education/subject_add.html:4
+#: templates/education/subject_add.html:11
+msgid "Добавление нового предмета"
+msgstr ""
+
+#: templates/education/subject_update.html:4
+#: templates/education/subject_update.html:11
+msgid "Редактирование предмета"
+msgstr "Пән өзгерту"
+
+#: templates/education/subjects.html:11
+msgid "Список предметов"
+msgstr "Пәндер тізімі"
+
+#: templates/education/subjects.html:15
+msgid "Добавить новый предмет"
+msgstr "Жаңа пән қосу"
+
+#: templates/education/subjects.html:25
+msgid "Активно"
+msgstr "Белсенді"
+
+#: templates/education/subjects.html:59
+msgid "Подтверждение удаления предмета"
+msgstr "Пән жоюды растау"
+
+#: templates/education/subjects.html:63
+#, python-format
+msgid " Вы точно хотите удалить предмет %(sub_name)s? "
+msgstr "Вы точно хотите удалить предмет %(sub_name)s? (kz)"
+
+#: templates/education/teacher.html:4
+msgid "Детальный просмотр страницы преподавателя"
+msgstr "Мұғалім туралы толық ақпарат"
+
+#: templates/education/teacher.html:16 templates/students/student_detail.html:4
+msgid "Информация"
+msgstr "Ақпарат"
+
+#: templates/education/teacher.html:18
+msgid "Занятия"
+msgstr "Сабақтар"
+
+#: templates/education/teacher.html:78
+msgid "Образование"
+msgstr "Білімі"
+
+#: templates/education/teacher.html:105
+msgid "Начало преподавания"
+msgstr "Начало преподавания (kz)"
+
+#: templates/education/teacher.html:132
+msgid "У преподавателя еще нет групп"
+msgstr "Мұғалімде әлі топтар жоқ"
+
+#: templates/education/teacher.html:134
+msgid "Вернуться к списку преподавателей"
+msgstr "Мұғалімдер тізіміне оралу"
+
+#: templates/education/teacher.html:140
+msgid "Проведенные занятия"
+msgstr "Өткізілген сабақтар"
+
+#: templates/education/teacher.html:145
+msgid "Дата проведения"
+msgstr "Өткізілген күні"
+
+#: templates/education/teacher.html:146
+msgid "Тема"
+msgstr "Тақырып"
+
+#: templates/education/teacher.html:147 templates/lessons/lesson-detail.html:45
+#: templates/lessons/lesson-detail.html:87
+msgid "Проведен"
+msgstr "Өткізілді"
+
+#: templates/education/teacher.html:148 templates/lessons/lesson-detail.html:25
+#: templates/lessons/lesson-detail.html:82
+#: templates/students/student_homeworks.html:17
+msgid "Группа"
+msgstr "Топтар"
+
+#: templates/education/teacher_update.html:4
+#, fuzzy
+#| msgid "Добавить нового преподавателя"
+msgid "Изменение информации о преподавателе"
+msgstr "Мұғалімді тіркеу"
+
+#: templates/education/teacher_update.html:11
+#, fuzzy
+#| msgid "Редактирование названия и предмента группы"
+msgid "Редактирование информации преподавателя"
+msgstr "Топтын атауын және пәнін өзгерту"
+
+#: templates/education/teacher_update.html:15
+#, fuzzy
+#| msgid "Преподаватель"
+msgid "Имя преподавателя"
+msgstr "Мұғалім"
+
+#: templates/education/teacher_update.html:22
+#, fuzzy
+#| msgid "Фамилия родителя"
+msgid "Фамилия преподавателя"
+msgstr "Ата-анасының тегі"
+
+#: templates/education/teacher_update.html:36
+msgid "Электронная почта"
+msgstr ""
+
+#: templates/education/teacher_update.html:64
+#, fuzzy
+#| msgid "Дата проведения"
+msgid "Адрес проживания"
+msgstr "Өткізілген күні"
+
+#: templates/education/teachers.html:11
+msgid "Список преподавателей"
+msgstr "Мұғалімдер тізімі"
+
+#: templates/education/teachers.html:15
+msgid "Добавить нового преподавателя"
+msgstr "Мұғалімді тіркеу"
+
+#: templates/index.html:15
+msgid "Оставьте Вашу заявку"
+msgstr "Өтінішіңізді қалдырыңыз"
+
+#: templates/index.html:17
+msgid "Заполните все поля и выберете интересующие Вас предметы:"
+msgstr "Акпаратты толтырып, қалаған пәндерді таңдаңыз:"
+
+#: templates/index.html:24
+msgid "ОСТАВИТЬ ЗАЯВКУ"
+msgstr "ӨТІНІШТІ ҚАЛДЫРУ"
+
+#: templates/lessons/lesson-detail.html:12
+#: templates/lessons/lesson-detail.html:78
+#, fuzzy
+#| msgid "Просмотр заявки"
+msgid "Просмотр занятия"
+msgstr "Өтініш"
+
+#: templates/lessons/lesson-detail.html:16
+#: templates/lessons/lesson-detail.html:80
+msgid "Урок"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:20
+#: templates/lessons/lesson-detail.html:81
+#, fuzzy
+#| msgid "Дата проведения"
+msgid "Дата проведения урока"
+msgstr "Өткізілген күні"
+
+#: templates/lessons/lesson-detail.html:33
+#: templates/lessons/lesson-detail.html:84
+#, fuzzy
+#| msgid "Время занятий"
+msgid "Время начала урока"
+msgstr "Сабақ уақыты"
+
+#: templates/lessons/lesson-detail.html:41
+#: templates/lessons/lesson-detail.html:86
+#: templates/lessons/lesson-detail.html:140
+msgid "Тема урока"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:48
+msgid "Да"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:50
+#, fuzzy
+#| msgid "Номер"
+msgid "Нет"
+msgstr "Нөмірі"
+
+#: templates/lessons/lesson-detail.html:55
+#, fuzzy
+#| msgid "Домашние задания"
+msgid "Домашнее задание"
+msgstr "Үй жұмыстары"
+
+#: templates/lessons/lesson-detail.html:58
+#, fuzzy
+#| msgid "Проведенные занятия"
+msgid "прикрепленный файл"
+msgstr "Өткізілген сабақтар"
+
+#: templates/lessons/lesson-detail.html:63
+#, fuzzy
+#| msgid "Проведенные занятия"
+msgid "Присутствие на занятии"
+msgstr "Өткізілген сабақтар"
+
+#: templates/lessons/lesson-detail.html:67
+msgid "Присутствовал"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:69
+msgid "Отсутствовал"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:75
+#, fuzzy
+#| msgid "Вернуться к списку групп"
+msgid "Вернуться к календарю"
+msgstr "Топтар тізіміне оралу"
+
+#: templates/lessons/lesson-detail.html:89
+#, fuzzy
+#| msgid "Название предмета"
+msgid "Задание на дом"
+msgstr "Пән атауы"
+
+#: templates/lessons/lesson-detail.html:93
+#, fuzzy
+#| msgid "Домашние задания"
+msgid "Домашняя работа"
+msgstr "Үй жұмыстары"
+
+#: templates/lessons/lesson-detail.html:93
+#: templates/students/student_homeworks.html:28
+msgid "Просмотр"
+msgstr ""
+
+#: templates/lessons/lesson-detail.html:95
+#, fuzzy
+#| msgid "Проведенные занятия"
+msgid "Студенты на занятии"
+msgstr "Өткізілген сабақтар"
+
+#: templates/lessons/lesson-detail.html:105
+#, fuzzy
+#| msgid "Открепить преподавателя"
+msgid "Сменить преподавателя"
+msgstr "Мұғалімді босату"
+
+#: templates/lessons/lesson-detail.html:118
+#, fuzzy
+#| msgid "Изменить"
+msgid "Сменить"
+msgstr "Өзгерту"
+
+#: templates/lessons/lesson-detail.html:129
+#, fuzzy
+#| msgid "Редактировать"
+msgid "Редактировать занятие"
+msgstr "Өзгерту"
+
+#: templates/lessons/lesson-detail.html:162
+#: templates/lessons/lesson-detail.html:164
+#, fuzzy
+#| msgid "Проведенные занятия"
+msgid "Отметка о проведении занятия"
+msgstr "Өткізілген сабақтар"
+
+#: templates/partial/left_nav.html:9
+msgid "Доска"
+msgstr "Тақта"
+
+#: templates/partial/left_nav.html:55
+msgid "Студенты"
+msgstr "Студенттер"
+
+#: templates/partial/left_nav.html:68
+msgid "Добавить админа"
+msgstr "Админді қосу"
+
+#: templates/partial/left_nav.html:75
+msgid "Создание расписания"
+msgstr "Кесте құру"
+
+#: templates/partial/left_nav.html:95
+#: templates/students/student_payments.html:4
+msgid "Оплаты"
+msgstr "Төлемдер"
+
+#: templates/partial/left_nav.html:101
+#: templates/students/student_homeworks.html:4
+msgid "Домашние задания"
+msgstr "Үй жұмыстары"
+
+#: templates/students/admin/students.html:14
+msgid "Список студентов"
+msgstr "Оқушылар тізімі"
+
+#: templates/students/student_groupings.html:12
+msgid "Cписок групп"
+msgstr "Топтар тізімі"
+
+#: templates/students/student_groupings.html:27
+msgid "Полное имя"
+msgstr ""
+
+#: templates/students/student_groupings.html:46
+msgid "Вы не состоите ни в одной из групп"
+msgstr ""
+
+#: templates/students/student_homeworks.html:11
+msgid "Домашние задания ученика"
+msgstr "Үй жұмыстары"
+
+#: templates/students/student_homeworks.html:18
+msgid "Задание"
+msgstr ""
+
+#: templates/students/student_homeworks.html:19
+msgid "Вложение"
+msgstr ""
+
+#: templates/students/student_homeworks.html:37
+msgid "У ученика нет домашних заданий"
+msgstr ""
+
+#: templates/students/student_payments.html:11
+msgid "История платежей"
+msgstr ""
+
+#: templates/students/student_payments.html:20
+msgid "Дата оплаты"
+msgstr ""
+
+#: templates/students/student_payments.html:21
+msgid "Сумма платежа"
+msgstr ""
+
+#: templates/students/student_payments.html:36
+#: templates/students/student_payments.html:67
+msgid "Итого"
+msgstr ""
+
+#: templates/students/student_payments.html:42
+msgid "Нет истории платежей"
+msgstr ""
+
+#: templates/students/student_payments.html:45
+msgid "История списания средств"
+msgstr ""
+
+#: templates/students/student_payments.html:51
+msgid "Период списания"
+msgstr ""
+
+#: templates/students/student_payments.html:52
+msgid "Сумма списания"
+msgstr ""
+
+#: templates/students/student_payments.html:73
+msgid "Нет истории списания"
+msgstr ""

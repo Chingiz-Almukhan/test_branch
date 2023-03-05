@@ -1,0 +1,244 @@
+﻿{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Детальный просмотр страницы преподавателя" %} {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='teacher' %}
+{% endblock %}
+
+{% block content %}
+<!-- Заголовок -->
+<p class="card-title">{% trans "Преподаватель" %} "{{ teacher.account.get_full_name }}"
+  {% for subject in teacher.subjects.all %}
+    {{ subject }} -
+  {% endfor %}
+</p>
+
+<!-- Tabs -->
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">{% trans "Информация" %}</a></li>
+		<li><a href="#tabs-2">{% trans "Группы" %}</a></li>
+		<li><a href="#tabs-3">{% trans "Занятия" %}</a></li>
+	</ul>
+	<div id="tabs-1"><div class="row mb-4">
+        <div class="col-sm-12">
+          <div>
+            <div class="form-group border-bottom row">
+                <label class="col">
+                  <strong>{% trans "Почта" %}</strong> 
+                </label>
+                <div class="col">
+                  {{ teacher.account.email }}
+                </div>
+            </div>
+            <div class="form-group border-bottom row">
+              <label class="col">
+                <strong>{% trans "Дата рождения" %}</strong> 
+              </label>
+              <div class="col">
+                {{ teacher.account.birth_date }}
+              </div>
+            </div>
+  
+            <div class="form-group border-bottom row">
+              <label class="col">
+                <strong>{% trans "Телефон" %}</strong> 
+              </label>
+              <div class="col">
+                {{ teacher.account.phone_number }}
+              </div>
+            </div>
+            <div class="form-group border-bottom row">
+              <label class="col">
+                <strong>{% trans "Адрес" %}</strong>
+              </label>
+              <div class="col">
+                {{ teacher.account.address }}
+              </div>
+            </div>
+            <div class="form-group border-bottom row">
+                <label class="col">
+                  <strong>{% trans "Пол" %}</strong>
+                </label>
+                <div class="col">
+                    {% if teacher.account.sex == 'MALE'%}
+                    {% trans "Мужской" %}
+                    {% else %}
+                    {% trans "Женский" %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group border-bottom row">
+                <label class="col">
+                  <strong>ИИН</strong>
+                </label>
+                <div class="col">
+                  {{ teacher.account.iin }}
+                </div>
+            </div>
+            <div class="form-group border-bottom row">
+                <label class="col">
+                  <strong>{% trans "Образование" %}</strong>
+                </label>
+                <div class="col">
+                  {{ teacher.education }}
+                </div>
+            </div>
+            <div class="form-group border-bottom row">
+                <label class="col">
+                  <strong>{% trans "Предметы" %}</strong>
+                </label>
+                <div class="col">
+                  {% for sub in teacher.subjects.all %}
+                    <p>{{ sub }}</p>
+                  {% endfor %}
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Вкладка Группы -->
+	<div id="tabs-2">
+    
+
+    <!-- Прикрепление преподавателя -->
+    {% if groupings %}
+        <strong>{% trans "Прикрепить преподавателя" %}</strong>
+        
+        <form class="forms-sample mt-3" action="{% url 'add_teacher_to_grouping' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleSelectGender">{% trans "Выберите группу" %}:</label>
+                <select class="form-control mb-3" name="grouping_pk" id="grouping_select">
+                    {% for grouping in groupings %}
+                    <option value="{{ grouping.pk }}">{{ grouping }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelectGender">{% trans "Выберите дату начала преподавания" %}:</label>
+                <input type="hidden" name="teacher_pk", value="{{ teacher.pk }}">
+
+                <input class="form-control" type="date" name="started_at" value="{{ current_date|date:'Y-m-d' }}" required><br>
+                <button type="submit" class="btn btn-inverse-primary mr-2 mt-3">{% trans "Сохранить" %}</button>
+            </div>
+        {% if teacher_message %}
+            <div class="alert alert-warning mt-2" role="alert">
+                {{ teacher_message }}
+            </div>
+        {% endif %}
+        </form>
+    {% else %}
+        <h5>Нет доступных групп для прикрепления</h5>
+    {% endif %} <!-- END // Прикрепление преподавателя -->
+
+  <!-- Вывод групп преподавателя -->
+  {% if teacher.get_active_teacher_groupings %}
+      <h5>Текущие группы преподавателя</h4>
+      <div class="table-responsive pt-3">
+          <table class="table table-sm table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Название группы</th>
+                <th>Дата начала преподавания</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for teacher_grouping in teacher.get_active_teacher_groupings %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <!-- Название группы -->
+                <td><a href="{% url 'grouping_update' teacher_grouping.grouping.pk %}">{{ teacher_grouping.grouping.name }}</a></td>
+                <!-- Дата начала преподавания -->
+                <td>{{ teacher_grouping.started_at }}</td>
+                <!-- Кнопка удалить из группы преподавателя -->
+                <td style="text-align:center;">
+                  <button style="margin-left:5px;" type="button" class="btn btn-inverse-danger btn-sm"
+                          data-bs-toggle="modal" data-bs-target="#del_teacher_from_grouping_modal{{ forloop.counter }}">
+                      <i class="fa fa-times"></i>
+                  </button>
+                  <!-- модальное окно удаление преподавателя из группы -->
+                  {% include 'education/components/modal_del_teacher_from_grouping.html' %}
+                </td>
+              </tr> 
+              {% endfor %} 
+            </tbody>
+          </table>
+      </div>
+  {% else %}
+      <p>Преподаватель еще не преподает ни в одной группе</p>
+  {% endif %} <!-- END Вывод групп преподавателя -->
+
+    <a href="{% url 'teachers' %}" class="btn btn-inverse-dark mt-3">{% trans "Вернуться к списку преподавателей" %}</a>
+  </div>
+
+  <div id="tabs-3">
+    <div class="table-responsive pt-3">
+      <p class="card-title">{% trans "Проведенные занятия" %}</p>
+      <table class="display table table-hover mb-3" id="example">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>{% trans "Дата проведения" %}</th>
+            <th>{% trans "Тема" %}</th>
+            <th>{% trans "Проведен" %}</th>
+            <th>{% trans "Группа" %}</th>
+            <th>{% trans "Аудитория" %}</th>
+            <th style="text-align:center;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lesson in teacher.lessons.all %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.date }}</a></td>
+            <td>{{ lesson.topic|slice:":20" }}</td>
+            <td>{% if lesson.is_conducted %}Да{% else %}Нет{% endif %}</td>
+            <td><a href="{% url 'grouping_update' lesson.grouping.pk %}">{{ lesson.grouping }}</a></td>
+            <td>{{ lesson.auditorium }}</td>
+            <td style="text-align:right;"></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+{% endblock %}
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script>
+{% if tab == 0 %}
+$( "#tabs" ).tabs({active:0});
+{% elif tab == 1 %}
+$( "#tabs" ).tabs({active:1});
+{% else %}
+$( "#tabs" ).tabs({active:2});
+{% endif %}
+$( "#tabs" ).tabs();
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+{% endblock %}

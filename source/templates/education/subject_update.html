@@ -1,0 +1,23 @@
+{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Редактирование предмета" %} {% endblock %}
+
+{% block nav %}
+{% include 'partial/left_nav.html' with page='subject' %}
+{% endblock %}
+
+{% block content %}
+<p class="card-title">{% trans "Редактирование предмета" %} "{{ subject.name }}"</p>
+<form class="forms-sample" action="{% url 'subject_update' subject.pk %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.name }}
+    </div>
+    {% for error in form.name.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %}
+    <button type="submit" class="btn btn-inverse-primary mr-2 mt-3">{% trans "Сохранить" %}</button>
+    <a href="{% url 'subjects' %}" class="btn btn-inverse-dark mt-3">{% trans "Отмена" %}</a>
+  </form>
+{% endblock %}

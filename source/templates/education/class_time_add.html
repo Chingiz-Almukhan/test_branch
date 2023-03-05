@@ -1,0 +1,31 @@
+{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} Time of subjects {% endblock %}
+
+{% block nav %}
+{% include 'partial/left_nav.html' with page='time' %}
+{% endblock %}
+
+{% block content %}
+<p class="card-title">{% trans "Добавление нового времени предмета" %}</p>
+<form class="forms-sample" action="{% url 'class_time_add' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group d-flex">
+      <!-- {{ form.time_start }} -->
+      <div class="me-4">
+        <p>Start time</p>
+        <input type="time" name="time_start">
+      </div>
+      <div>
+        <p>End time</p>
+        <input type="time" name="time_end">
+      </div>
+    </div>
+    <!-- {% for error in form.time_start.errors %}
+    <div class="ms-2 text-danger">{{ error }}</div>
+    {% endfor %} -->
+    <button type="submit" class="btn btn-inverse-primary mr-2 mt-3">{% trans "Сохранить" %}</button>
+    <a href="{% url 'class_times' %}" class="btn btn-inverse-dark mt-3">{% trans "Отмена" %}</a>
+  </form>
+{% endblock %}

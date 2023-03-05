@@ -1,0 +1,738 @@
+[
+{
+  "model": "auth.group",
+  "pk": 7,
+  "fields": {
+    "name": "admin",
+    "permissions": [
+      [
+        "add_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "change_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "delete_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "view_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "add_application",
+        "applications",
+        "application"
+      ],
+      [
+        "change_application",
+        "applications",
+        "application"
+      ],
+      [
+        "delete_application",
+        "applications",
+        "application"
+      ],
+      [
+        "view_application",
+        "applications",
+        "application"
+      ],
+      [
+        "add_applicationstatus",
+        "applications",
+        "applicationstatus"
+      ],
+      [
+        "change_applicationstatus",
+        "applications",
+        "applicationstatus"
+      ],
+      [
+        "delete_applicationstatus",
+        "applications",
+        "applicationstatus"
+      ],
+      [
+        "view_applicationstatus",
+        "applications",
+        "applicationstatus"
+      ],
+      [
+        "add_status",
+        "applications",
+        "status"
+      ],
+      [
+        "change_status",
+        "applications",
+        "status"
+      ],
+      [
+        "delete_status",
+        "applications",
+        "status"
+      ],
+      [
+        "view_status",
+        "applications",
+        "status"
+      ],
+      [
+        "add_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "change_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "delete_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "view_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "add_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "change_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "delete_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "view_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "add_discount",
+        "education",
+        "discount"
+      ],
+      [
+        "change_discount",
+        "education",
+        "discount"
+      ],
+      [
+        "delete_discount",
+        "education",
+        "discount"
+      ],
+      [
+        "view_discount",
+        "education",
+        "discount"
+      ],
+      [
+        "add_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "change_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "delete_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "view_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "add_groupingstatus",
+        "education",
+        "groupingstatus"
+      ],
+      [
+        "change_groupingstatus",
+        "education",
+        "groupingstatus"
+      ],
+      [
+        "delete_groupingstatus",
+        "education",
+        "groupingstatus"
+      ],
+      [
+        "view_groupingstatus",
+        "education",
+        "groupingstatus"
+      ],
+      [
+        "add_packet",
+        "education",
+        "packet"
+      ],
+      [
+        "change_packet",
+        "education",
+        "packet"
+      ],
+      [
+        "delete_packet",
+        "education",
+        "packet"
+      ],
+      [
+        "view_packet",
+        "education",
+        "packet"
+      ],
+      [
+        "add_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "change_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "delete_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "view_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "add_statusofgrouping",
+        "education",
+        "statusofgrouping"
+      ],
+      [
+        "change_statusofgrouping",
+        "education",
+        "statusofgrouping"
+      ],
+      [
+        "delete_statusofgrouping",
+        "education",
+        "statusofgrouping"
+      ],
+      [
+        "view_statusofgrouping",
+        "education",
+        "statusofgrouping"
+      ],
+      [
+        "add_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "change_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "delete_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "view_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "add_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "change_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "delete_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "view_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "add_teachergrouping",
+        "education",
+        "teachergrouping"
+      ],
+      [
+        "change_teachergrouping",
+        "education",
+        "teachergrouping"
+      ],
+      [
+        "delete_teachergrouping",
+        "education",
+        "teachergrouping"
+      ],
+      [
+        "view_teachergrouping",
+        "education",
+        "teachergrouping"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 8,
+  "fields": {
+    "name": "teacher",
+    "permissions": [
+      [
+        "view_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "view_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "view_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "view_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "view_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "view_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "view_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "view_teachergrouping",
+        "education",
+        "teachergrouping"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 9,
+  "fields": {
+    "name": "student",
+    "permissions": [
+      [
+        "view_account",
+        "accounts",
+        "account"
+      ],
+      [
+        "view_auditorium",
+        "education",
+        "auditorium"
+      ],
+      [
+        "view_classtime",
+        "education",
+        "classtime"
+      ],
+      [
+        "view_grouping",
+        "education",
+        "grouping"
+      ],
+      [
+        "view_schedule",
+        "education",
+        "schedule"
+      ],
+      [
+        "view_studentgrouping",
+        "education",
+        "studentgrouping"
+      ],
+      [
+        "view_subject",
+        "education",
+        "subject"
+      ],
+      [
+        "view_teachergrouping",
+        "education",
+        "teachergrouping"
+      ]
+    ]
+  }
+},
+{
+  "model": "education.auditorium",
+  "pk": 1,
+  "fields": {
+    "name": "108",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:06:47.567Z",
+    "update_at": "2023-01-06T18:06:47.567Z"
+  }
+},
+{
+  "model": "education.auditorium",
+  "pk": 2,
+  "fields": {
+    "name": "109",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:06:55.541Z",
+    "update_at": "2023-01-06T18:06:55.541Z"
+  }
+},
+{
+  "model": "education.auditorium",
+  "pk": 3,
+  "fields": {
+    "name": "110",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:07:02.862Z",
+    "update_at": "2023-01-06T18:07:02.862Z"
+  }
+},
+{
+  "model": "education.classtime",
+  "pk": 1,
+  "fields": {
+    "time_start": "13:30:00",
+    "time_end": "15:00:00",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:07:47.701Z",
+    "changed_at": "2023-01-06T18:07:47.701Z",
+    "number_lesson": 1
+  }
+},
+{
+  "model": "education.classtime",
+  "pk": 2,
+  "fields": {
+    "time_start": "15:00:00",
+    "time_end": "16:30:00",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:08:14.925Z",
+    "changed_at": "2023-01-06T18:08:14.925Z",
+    "number_lesson": 2
+  }
+},
+{
+  "model": "education.classtime",
+  "pk": 4,
+  "fields": {
+    "time_start": "16:30:00",
+    "time_end": "18:00:00",
+    "is_deleted": false,
+    "created_at": "2023-01-06T18:08:54.746Z",
+    "changed_at": "2023-01-06T18:08:54.746Z",
+    "number_lesson": 3
+  }
+},
+{
+  "model": "education.discount",
+  "pk": 1,
+  "fields": {
+    "name": "Екінші бала",
+    "discount_amount": 20,
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.discount",
+  "pk": 2,
+  "fields": {
+    "name": "Жетім",
+    "discount_amount": 50,
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.discount",
+  "pk": 3,
+  "fields": {
+    "name": "Көпбалалы",
+    "discount_amount": 20,
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.discount",
+  "pk": 4,
+  "fields": {
+    "name": "Олимпиада",
+    "discount_amount": 50,
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.statusofgrouping",
+  "pk": 1,
+  "fields": {
+    "name": "набор",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.statusofgrouping",
+  "pk": 2,
+  "fields": {
+    "name": "учеба",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.statusofgrouping",
+  "pk": 3,
+  "fields": {
+    "name": "завершена",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.packet",
+  "pk": 1,
+  "fields": {
+    "name": "1 пән",
+    "qty": 1,
+    "is_deleted": false,
+    "sum": 12000
+  }
+},
+{
+  "model": "education.packet",
+  "pk": 2,
+  "fields": {
+    "name": "2 пән",
+    "qty": 2,
+    "is_deleted": false,
+    "sum": 20000
+  }
+},
+{
+  "model": "education.packet",
+  "pk": 3,
+  "fields": {
+    "name": "3 пән",
+    "qty": 3,
+    "is_deleted": false,
+    "sum": 27000
+  }
+},
+{
+  "model": "education.packet",
+  "pk": 4,
+  "fields": {
+    "name": "4 пән",
+    "qty": 4,
+    "is_deleted": false,
+    "sum": 32000
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Ағылшын",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 2,
+  "fields": {
+    "name": "Биология",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 3,
+  "fields": {
+    "name": "География",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 4,
+  "fields": {
+    "name": "ДЖТ",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 5,
+  "fields": {
+    "name": "Информатика",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 6,
+  "fields": {
+    "name": "Математика",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 7,
+  "fields": {
+    "name": "Матсауат",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 8,
+  "fields": {
+    "name": "Физика",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 9,
+  "fields": {
+    "name": "Химия",
+    "is_deleted": false
+  }
+},
+{
+  "model": "education.subject",
+  "pk": 10,
+  "fields": {
+    "name": "Қазақстан тарихы",
+    "is_deleted": false
+  }
+},
+  {
+  "model": "applications.status",
+  "pk": 1,
+  "fields": {
+    "name": "Создана",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 2,
+  "fields": {
+    "name": "В работе",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 3,
+  "fields": {
+    "name": "Подписание договора",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 4,
+  "fields": {
+    "name": "Ожидание оплаты",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 5,
+  "fields": {
+    "name": "Оплачена",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 6,
+  "fields": {
+    "name": "Отклонена",
+    "is_deleted": false
+  }
+},
+{
+  "model": "applications.status",
+  "pk": 7,
+  "fields": {
+    "name": "Завершена",
+    "is_deleted": false
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$yzJk7F7pbU9QNwENYPTLW4$0dC8nSjdTki1+U4MFjpS5XhP9wF7N4GZtAvTmMdxtwk=",
+    "last_login": "2023-01-12T19:59:25.460Z",
+    "is_superuser": true,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-01-06T12:31:17Z",
+    "email": "root@root.kz",
+    "avatar": "",
+    "phone_number": "+77077777777",
+    "application": null,
+    "birth_date": null,
+    "iin": null,
+    "address": null,
+    "groups": [
+      [
+        "admin"
+      ]
+    ],
+    "user_permissions": []
+  }
+}
+]

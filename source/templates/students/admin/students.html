@@ -1,0 +1,61 @@
+﻿{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} Предметы {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='students' %}
+{% endblock %}
+{% block content %}
+<div class="table-responsive pt-3">
+    <a href="{% url 'student_add' %}">
+        <input type="button" class="btn btn-inverse-primary mr-2 mt-3 mb-5" value="Создать ученика"></button>
+    </a>
+    <p class="card-title">{% trans "Список студентов" %}</p>
+    <table class="display table table-hover mb-3" id="example">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>{% trans "Фамилия" %}</th>
+                <th>{% trans "Имя" %}</th>
+                <th>{% trans "Дата рождения" %}</th>
+                <th>E-mail</th>
+                <th>{% trans "Активный" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'student' student.pk %}">{{ student.last_name }}</a></td>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.birth_date }}</td>
+                <td>{{ student.email }}</td>
+                <td>
+                    {% if student.is_active == True  %}
+                    <p><span style="opacity: 0;">yes</span> <i class="ti-check text-success"></i></p>
+                    {% else %}
+                    <p><span style="opacity: 0;">noo</span> <i class="ti-close text-danger"></i></p>
+                    {% endif %}
+                </td>
+                <td style="text-align:right;">
+                    {% translate "Подробная информация" as the_title  %}
+                    <a title="{{the_title}}" href="{% url 'student' student.pk %}"
+                       class="btn btn-inverse-dark btn-sm text-center">
+                        <i class="ti-more"></i>
+                    </a>
+                    {% translate "Редактировать" as the_title  %}
+                    <a title="{{the_title}}" style="margin-left:10px;" href="{% url 'student_update' student.pk %}"
+                       class="btn btn-inverse-dark btn-sm text-center">
+                        <i class="ti-pencil-alt"></i>
+                    </a>
+                </td>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+    
+    {% endblock %}

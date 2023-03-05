@@ -1,0 +1,47 @@
+{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Группы" %} {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='groups' %}
+{% endblock %}
+
+{% block content %}
+{% if student_groupings%}
+<p class="card-title">{% trans "Cписок групп" %}:</p>
+  {% for group in student_groupings %}
+  <h5>{{ group.name }}, {{group.teachers.last}}
+    {% comment %} {% comment %} {% for teacher in group.teach_groupings.all %}
+                    {% if teacher.grouping == group %}
+                    {% trans "Преподаватель" %}: {{teacher.teacher.account}}, {% trans "почта" %}: {{ teacher.teacher.account.email }}, {% trans "телефон" %}: {{ teacher.teacher.account.phone_number }}
+                    {% endif %}
+                    {% endfor %} {% endcomment %}
+  </h5>
+  <div class="table-responsive pt-3 pb-3">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>#</th>
+          <th>{% trans "Полное имя" %}</th>
+          <th>{% trans "Почта" %}</th>
+          <th>{% trans "Телефон" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ student.student.get_full_name }}</td>
+          <td>{{ student.student.email }}</td>
+          <td>{{ student.student.phone_number }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+  {% endfor %}
+{% else %}
+  <p>{% trans "Вы не состоите ни в одной из групп" %}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'crm.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "Информация" %} {% endblock %}
+
+{% block nav %}
+    {% include 'partial/left_nav.html' with page='information' %}
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4 mt-4">
+  <div class="col-sm-4">
+    <div class="row mb-2">
+      <div class="float-right ms-4">
+        <h4>{{ student.get_full_name }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div>
+      <div class="form-group border-bottom row">
+          <label class="col">
+            <strong>{% trans "Почта" %}</strong> 
+          </label>
+          <div class="col">
+            {{ student.email }}
+          </div>
+      </div>
+      <div class="form-group border-bottom row">
+        <label class="col">
+          <strong>{% trans "Дата рождения" %}</strong> 
+        </label>
+        <div class="col">
+          {{ student.birth_date }}
+        </div>
+      </div>
+
+      <div class="form-group border-bottom row">
+        <label class="col">
+          <strong>{% trans "Телефон" %}</strong> 
+        </label>
+        <div class="col">
+          {{ student.phone_number }}
+        </div>
+      </div>
+      <div class="form-group border-bottom row">
+        <label class="col">
+          <strong>{% trans "Адрес" %}</strong>
+        </label>
+        <div class="col">
+          {{ student.address }}
+        </div>
+      </div>
+      <div class="form-group border-bottom row">
+          <label class="col">
+            <strong>{% trans "Пол" %}</strong>
+          </label>
+          <div class="col">
+              {% if student.sex == 'MALE'%}
+              {% trans "Мужской" %}
+              {% else %}
+              {% trans "Женский" %}
+              {% endif %}
+          </div>
+      </div>
+      <div class="form-group border-bottom row">
+          <label class="col">
+            <strong>ИИН</strong>
+          </label>
+          <div class="col">
+            {{ student.iin }}
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+name: "Django deploy workflow"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ssh key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'any_host'
+      - name: clone repo and create environment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd ESDP-AP-7-team-1
+            git pull
+            git checkout dev_server_school
+            docker-compose down --remove-orphans
+            sudo docker-compose -f docker-compose.yml up --build -d
+            docker ps
+            systemctl restart nginx
+            exit
