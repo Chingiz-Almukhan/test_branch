@@ -24,7 +24,6 @@ jobs:
           script: |
             cd ESDP-AP-7-team-1
             git pull
-            git checkout dev_server_school
             docker-compose down --remove-orphans
             sudo docker-compose -f docker-compose.yml up --build -d
             docker ps
