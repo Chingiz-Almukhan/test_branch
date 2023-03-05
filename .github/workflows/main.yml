@@ -22,6 +22,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            cd projects
             cd test_branch
             git pull
             docker-compose down --remove-orphans
