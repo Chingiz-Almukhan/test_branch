@@ -22,9 +22,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd ESDP-AP-7-team-1
+            cd test_branch
             git pull
-            git checkout dev_server_school
             docker-compose down --remove-orphans
             sudo docker-compose -f docker-compose.yml up --build -d
             docker ps
