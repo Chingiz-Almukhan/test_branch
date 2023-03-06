@@ -1,22 +1,31 @@
-name: "Django deploy workflow"
+name: "Django deploy workflow v2"
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    push:
+      branches:
+        - master
 
 jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
-      - name: install ssh keys
-        # check this thread to understand why its needed:
-        # https://stackoverflow.com/a/70447517
-        run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_TOKEN }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-      - name: connect and pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd projects && cd test_branch && git checkout master && git pull && docker-compose down --remove-orphans && chmod +x entrypoint.sh && sudo docker-compose -f docker-compose.yml up --build -d && docker ps &&  exit"
-      - name: cleanup
-        run: rm -rf ~/.ssh
+      - name: Install ssh key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'any_host'
+      - name: clone repo and create environment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd projects/test_branch
+            git pull
+            git checkout master
+            sudo docker-compose -f docker-compose.yml up --build -d
+            docker ps
+            exit
