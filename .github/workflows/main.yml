@@ -9,24 +9,14 @@ jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Install ssh key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: 'any_host'
-      - name: clone repo and create environment
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd projects
-            cd test_branch
-            git pull origin master --rebase
-            docker-compose down --remove-orphans
-            chmod +x entrypoint.sh
-            sudo docker-compose -f docker-compose.yml up --build -d
-            docker ps
-            exit
+      - name: Write SSH keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          host='host.example.com'
+          hosts="$(dig +short "$host" | grep -v '\.$' | sed -z 's|\n|,|g')$host"
+          ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd projects && cd test_branch && git checkout master && git pull && docker-compose down --remove-orphans && chmod +x entrypoint.sh && sudo docker-compose -f docker-compose.yml up --build -d && docker ps &&  exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
