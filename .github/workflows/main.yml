@@ -9,13 +9,14 @@ jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Write SSH keys
+      - name: install ssh keys
+        # check this thread to understand why its needed:
+        # https://stackoverflow.com/a/70447517
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          host='host.example.com'
-          hosts="$(dig +short "$host" | grep -v '\.$' | sed -z 's|\n|,|g')$host"
-          ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_TOKEN }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
       - name: connect and pull
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd projects && cd test_branch && git checkout master && git pull && docker-compose down --remove-orphans && chmod +x entrypoint.sh && sudo docker-compose -f docker-compose.yml up --build -d && docker ps &&  exit"
       - name: cleanup
